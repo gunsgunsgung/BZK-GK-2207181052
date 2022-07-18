@@ -15,6 +15,16 @@ public class SessionService {
     private static int EXPIRE_TIME = 300 * 60 * 1000;
 
     public SessionService(){ sessionMap = new HashMap<>();}
+    
+    public RespBaseVo findAllStaff(ReqSysStaff reqSysStaff) {
+        System.out.println("=============查询所有Staff表信息====================");
+        RespBaseVo<Object> respBaseVo = new RespBaseVo<>();
+        List<SysStaff> sysStaffsList = sysStaffMapper.findAllStaff();
+        respBaseVo.setData(sysStaffsList);
+        System.out.println("gunsgunsgung");
+        return respBaseVo;
+    }
+    
 
     /**
      * 建立session，返回给用户
